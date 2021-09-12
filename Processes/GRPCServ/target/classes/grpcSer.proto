@@ -1,0 +1,19 @@
+syntax = "proto3";
+option java_multiple_files = true;
+option java_package = "com.grpcGenCode";
+
+package com.grpcGenCode;
+
+message grpcSerRequest {
+    string ipTag = 1;
+}
+
+message grpcSerResponse {
+    string pkg = 1;
+    string status = 2;
+    string opTag = 3;
+}
+
+service grpcSer {
+    rpc getstatus(grpcSerRequest) returns (grpcSerResponse);
+}
